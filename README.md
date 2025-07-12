@@ -180,7 +180,7 @@ pytest --cov=app tests/
 ## Project Structure
 
 ```
-prueba_tecnica/
+cats/
 ├── backend/                    # Backend application
 │   ├── app/
 │   │   ├── core/              # Domain layer
