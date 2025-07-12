@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breeds App - Demo Instructions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        .demo-header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .demo-content {
+            padding: 2rem;
+        }
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .btn-launch {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-launch:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(40,167,69,0.3);
+            color: white;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        .api-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        .status-checking {
+            background: #ffeaa7;
+            color: #2d3436;
+        }
+        .status-online {
+            background: #55efc4;
+            color: #2d3436;
+        }
+        .status-offline {
+            background: #ff7675;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-container">
+            <div class="demo-header">
+                <h1><i class="fas fa-cat"></i> Cat Breeds & Users App</h1>
+                <p class="lead">Modern Frontend for Cat Breeds API</p>
+            </div>
+            
+            <div class="demo-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3><i class="fas fa-rocket"></i> Quick Start</h3>
+                        <div class="step">
+                            <h5>1. Check Backend Status</h5>
+                            <p>Make sure your backend API is running:</p>
+                            <div class="api-status" id="api-status">
+                                <i class="fas fa-spinner fa-spin"></i> Checking API...
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>2. Launch Application</h5>
+                            <p>Click the button below to start the app:</p>
+                            <a href="index.html" class="btn btn-launch">
+                                <i class="fas fa-play"></i> Launch Cat Breeds App
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h3><i class="fas fa-server"></i> Backend Setup</h3>
+                        <div class="step">
+                            <h5>Start Backend API</h5>
+                            <p>Navigate to your backend directory and run:</p>
+                            <div class="code-block">
+                                cd backend<br>
+                                python main.py
+                            </div>
+                            <p><small>Backend should be running on: <strong>http://localhost:8000</strong></small></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h3><i class="fas fa-info-circle"></i> Features</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-center p-3">
+                                    <i class="fas fa-user-plus fa-2x text-primary mb-2"></i>
+                                    <h5>User Registration</h5>
+                                    <p>Create new accounts with email validation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center p-3">
+                                    <i class="fas fa-sign-in-alt fa-2x text-success mb-2"></i>
+                                    <h5>User Login</h5>
+                                    <p>Secure authentication with session management</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center p-3">
+                                    <i class="fas fa-cat fa-2x text-info mb-2"></i>
+                                    <h5>Cat Breeds</h5>
+                                    <p>Browse and search through cat breeds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h3><i class="fas fa-mobile-alt"></i> Responsive Design</h3>
+                        <p>The application works perfectly on desktop, tablet, and mobile devices with a modern, clean design using Bootstrap 5.</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-lightbulb"></i>
+                    <strong>Pro Tip:</strong> Use the demo credentials or create a new account to test all features. The app includes search, filtering, and detailed cat breed views!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check API status
+        async function checkAPIStatus() {
+            const statusElement = document.getElementById('api-status');
+            
+            try {
+                const response = await fetch('http://localhost:8000/health');
+                if (response.ok) {
+                    statusElement.innerHTML = '<i class="fas fa-check-circle"></i> API Online';
+                    statusElement.className = 'api-status status-online';
+                } else {
+                    statusElement.innerHTML = '<i class="fas fa-exclamation-circle"></i> API Error';
+                    statusElement.className = 'api-status status-offline';
+                }
+            } catch (error) {
+                statusElement.innerHTML = '<i class="fas fa-times-circle"></i> API Offline';
+                statusElement.className = 'api-status status-offline';
+            }
+        }
+        
+        // Check API status on page load
+        checkAPIStatus();
+        
+        // Check every 30 seconds
+        setInterval(checkAPIStatus, 30000);
+    </script>
+</body>
+</html> 

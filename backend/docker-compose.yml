@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: catapp_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=catapp
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - catapp_network
+
+  api:
+    build: .
+    container_name: catapp_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"  # Use localhost:8080 instead
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      - DATABASE_NAME=catapp
+      - CAT_API_KEY=live_JBT0Ah0Nt12iyl2IpjQVLDWjcLk0GQwf4zI9wBMfmfejKmcC31mOJp4yJz5TsOUP
+    networks:
+      - catapp_network
+
+volumes:
+  mongo_data:
+
+networks:
+  catapp_network:
+    driver: bridge 
